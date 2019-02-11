@@ -28,6 +28,18 @@ class HangpersonGame
     end 
   end
   
+  def word_with_guesses
+    displayed = ''
+    @word.each_char do |letter|
+      if @guesses.index(letter)
+        displayed << letter
+      else
+        displayed << '-'
+      end
+    end
+    displayed
+  end
+  
   # You can test it by running $ bundle exec irb -I. -r app.rb
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
   #  => "cooking"   <-- some random word
